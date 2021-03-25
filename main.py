@@ -26,7 +26,7 @@ def feature_selection(x, y, k=31):
 
     for j in range(len(fit.scores_)):
         scores.append((j+1, fit.scores_[j]))
-        scores.sort(key=lambda tup: tup[1], reverse=True)
+    scores.sort(key=lambda tup: tup[1], reverse=True)
     return scores, selector.get_support()
 
 
