@@ -1,0 +1,5 @@
+xlsxwriter
+pandas
+numpy
+matplotlib
+sklearn
