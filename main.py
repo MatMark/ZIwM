@@ -122,7 +122,7 @@ def ttest():
 
     for i in range(len(clfs)):
         for j in range(len(clfs)):
-            t_statistic[i, j], _ = ttest_ind(
+            t_statistic[i, j], p_value[i, j] = ttest_ind(
                 scores[i], scores[j])
 
     headers = []
