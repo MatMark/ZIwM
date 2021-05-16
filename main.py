@@ -74,6 +74,7 @@ def feature_selection(x, y, k=31):
 def train_evaluate(x, y, max_features=31):
     mean_scores = np.empty((max_features, (len(clfs))))
     for i in range(1, max_features + 1):
+        print(str(i) + " features")
         fit_x, _ = feature_selection(x, y, i)
         kfold = RepeatedStratifiedKFold(
             n_splits=2, n_repeats=5, random_state=1)
@@ -86,9 +87,11 @@ def train_evaluate(x, y, max_features=31):
                 prediction = clf.predict(fit_x[test])
                 scores[clf_id, fold_id] = accuracy_score(y[test], prediction)
         mean_score = np.mean(scores, axis=1)
+        np.save('results_' + str(i), scores)
         # only for ploting
         for idx, score in np.ndenumerate(mean_score):
             mean_scores[i-1][idx[0]] = score
+        print(str(int((i/max_features)*100)) + "%" + " completed")
     for clf_id, clf_name in enumerate(clfs):
         x_axis_values = []
         for j in range(0, max_features):
@@ -108,12 +111,11 @@ def train_evaluate(x, y, max_features=31):
     plt.legend()
     plt.savefig("W_" + str(i) + ".png", dpi=600)
     plt.clf()
-    np.save('results', scores)
     return mean_scores
 
 
 def ttest():
-    scores = np.load('results.npy')
+    scores = np.load('results_23.npy')  # have best results
     t_statistic = np.zeros((len(clfs), len(clfs)))
     p_value = np.zeros((len(clfs), len(clfs)))
     alfa = .05
