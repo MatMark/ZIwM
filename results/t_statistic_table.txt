@@ -1,8 +1,8 @@
                        256layers_momentum    512layers_momentum    1024layers_momentum    256layers_without    512layers_without    1024layers_without
 -------------------  --------------------  --------------------  ---------------------  -------------------  -------------------  --------------------
-256layers_momentum                      0                     0                      0                    1                    1                     0
-512layers_momentum                      0                     0                      0                    1                    1                     1
-1024layers_momentum                     0                     0                      0                    1                    1                     1
-256layers_without                       0                     0                      0                    0                    0                     0
-512layers_without                       0                     0                      0                    0                    0                     0
-1024layers_without                      0                     0                      0                    0                    0                     0
+256layers_momentum                   0.00                 -0.45                  -0.23                 3.03                 2.12                  1.77
+512layers_momentum                   0.45                  0.00                   0.31                 3.71                 2.85                  2.43
+1024layers_momentum                  0.23                 -0.31                   0.00                 4.02                 3.16                  2.57
+256layers_without                   -3.03                 -3.71                  -4.02                 0.00                -1.48                 -1.63
+512layers_without                   -2.12                 -2.85                  -3.16                 1.48                 0.00                 -0.30
+1024layers_without                  -1.77                 -2.43                  -2.57                 1.63                 0.30                  0.00

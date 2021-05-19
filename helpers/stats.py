@@ -63,5 +63,5 @@ stat_better = significance * advantage
 stat_better_table = tabulate(np.concatenate(
     (names_column, stat_better), axis=1), headers)
 print("Statistically significantly better:\n", stat_better_table)
-with open('results/t_statistic_table.txt', 'w') as f:
+with open('results/stat_better_table.txt', 'w') as f:
     f.write(stat_better_table)
