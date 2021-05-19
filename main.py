@@ -87,7 +87,7 @@ def train_evaluate(x, y, max_features=31):
                 prediction = clf.predict(fit_x[test])
                 scores[clf_id, fold_id] = accuracy_score(y[test], prediction)
         mean_score = np.mean(scores, axis=1)
-        np.save('results_' + str(i), scores)
+        np.save('results/results_' + str(i), scores)
         # only for ploting
         for idx, score in np.ndenumerate(mean_score):
             mean_scores[i-1][idx[0]] = score
@@ -115,7 +115,7 @@ def train_evaluate(x, y, max_features=31):
 
 
 def ttest():
-    scores = np.load('results_23.npy')  # have best results
+    scores = np.load('results/results_23.npy')  # have best results
     t_statistic = np.zeros((len(clfs), len(clfs)))
     p_value = np.zeros((len(clfs), len(clfs)))
     alfa = .05

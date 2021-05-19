@@ -1,0 +1,8 @@
+                       256layers_momentum    512layers_momentum    1024layers_momentum    256layers_without    512layers_without    1024layers_without
+-------------------  --------------------  --------------------  ---------------------  -------------------  -------------------  --------------------
+256layers_momentum                      0                     0                      0                    1                    1                     0
+512layers_momentum                      0                     0                      0                    1                    1                     1
+1024layers_momentum                     0                     0                      0                    1                    1                     1
+256layers_without                       0                     0                      0                    0                    0                     0
+512layers_without                       0                     0                      0                    0                    0                     0
+1024layers_without                      0                     0                      0                    0                    0                     0
